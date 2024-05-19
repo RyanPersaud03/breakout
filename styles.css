@@ -1,3 +1,39 @@
+body {
+  background: linear-gradient(135deg, #ffcc33, #ff99cc);
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+#score {
+  font-size: 24px;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+#start-button {
+  font-size: 20px;
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#start-button:hover {
+  background-color: #0056b3;
+}
+
 .grid {
   position: relative;
   width: 560px;
@@ -5,6 +41,8 @@
   background-color: #f0e68c;
   border: 2px solid #000;
   margin: 0 auto;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .block {
@@ -12,6 +50,13 @@
   width: 100px;
   height: 20px;
   background-color: #00f;
+  border-radius: 5px;
+  animation: blockAnimation 1s ease-in-out infinite alternate;
+}
+
+@keyframes blockAnimation {
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
 
 .user {
@@ -20,6 +65,13 @@
   height: 20px;
   background-color: #ff0;
   bottom: 10px;
+  border-radius: 5px;
+  animation: userAnimation 1s ease-in-out infinite alternate;
+}
+
+@keyframes userAnimation {
+  from { transform: translateY(0); }
+  to { transform: translateY(-2px); }
 }
 
 .ball {
@@ -28,4 +80,11 @@
   height: 20px;
   background-color: #f00;
   border-radius: 50%;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.7);
+  animation: ballAnimation 0.5s linear infinite;
+}
+
+@keyframes ballAnimation {
+  from { transform: scale(1); }
+  to { transform: scale(1.2); }
 }
